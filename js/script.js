@@ -6,23 +6,23 @@ Per i numeri che sono sia multipli di 3 che di 5 stampi FizzBuzz.
 
 
 */
-
+var display = document.getElementById('display')
 var list = [];
 var number = 0;
 
 for (var i = 0; i < 100; i++) {
     number += 1;
 
-    if (!(number % 3)) {
+    if (number % 5 == 0 && number % 3 == 0) {
+        list.push('FizzBuzz');
+    }
+
+    else if (number % 3 == 0) {
         list.push('Fizz');
     }
 
-    else if (!(number % 5)) {
+    else if (number % 5 == 0) {
         list.push('Buzz');
-    }
-
-    else if ((!(number % 5)) || (!(number % 3)) {
-        list.push('FizzBuzz');
     }
 
     else {
@@ -32,3 +32,4 @@ for (var i = 0; i < 100; i++) {
 }
 
 console.log(list);
+display.innerHTML = (list);
